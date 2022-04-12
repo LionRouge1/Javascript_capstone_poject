@@ -66,6 +66,7 @@ header {
   align-items: center;
   justify-content: center;
   margin: 0 10px;
+  transition: 1s background-color;
 }
 
 .menu li:hover {
@@ -87,6 +88,66 @@ header {
  font-size: 20px;
  color: var(--color);
 }
+
+/* style the main */
+
+main {
+  width: 70%;
+  margin: 0 auto;
+}
+
+main article {
+  display: inline-block;
+  width: 350px;
+  background-color: var(--hd-color);
+  box-shadow: 0 0 16px rgb(119, 110, 110);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 25px;
+  transition: 0.3s transform;
+}
+
+main article:hover {
+  transform: scale(1.1);
+}
+
+.title {
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.meal_img {
+  width: 300px;
+  background-color: white;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.meal_img > img {
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
+}
+
+.btn_comment {
+  margin: 5px auto;
+  display: block;
+  width: 100px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+  box-shadow: 5px 5px 0 #dd1a32;
+  transition: 0.2s box-shadow;
+}
+
+.btn_comment:hover {
+ border: 2px solid #dd1a32;
+ box-shadow: none;
+}
+
+/* style footer */
 
 footer {
   align-items: center;
