@@ -87,3 +87,12 @@ header {
  font-size: 20px;
  color: var(--color);
 }
+
+footer {
+  align-items: center;
+  align-content: center;
+  padding: 1.5rem;
+  border: 2px solid grey;
+  background-color: #dd1a32;
+  color: var(--bar-color);
+}
