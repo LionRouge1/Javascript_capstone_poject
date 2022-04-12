@@ -1,6 +1,89 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+  --bg-color: #e8e9ea;
+  --bar-color: #fafafa;
+  --hd-color: #ffcb05;
+  --color: #ed1c24;
+  --nd-color: #545862;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+  color: var(--nd-color);
+}
+
 body {
- background-color: bisque;
- font-family: 'Fira Sans', sans-serif;
+  background-color: white;
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background-color: var(--bar-color);
+}
+
+.logo {
+  margin-left: 10%;
+}
+
+.logo img {
+  height: 70px;
+}
+
+.menu {
+  width: 30%;
+}
+
+.menu > ul {
+  display: flex;
+  height: 70px;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 34px;
+  align-items: center;
+  background-color: var(--hd-color);
+  color: white;
+  height: 45px;
+}
+
+.menu li {
+  width: 100px;
+  height: 70px;
+  padding: 5px 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.menu li:hover {
+ background-color: #ed1c2331;
+ border-top: 5px solid var(--color);
+ padding-top: 0;
+ color: var(--bar-color);
+}
+
+.menu li:hover a {
+ color: var(--bar-color);
+}
+
+.menu > ul a {
+ text-decoration: none;
+ color: black;
+ font-weight: 500;
+ line-height: 14px;
+ font-size: 20px;
+ color: var(--color);
 }
