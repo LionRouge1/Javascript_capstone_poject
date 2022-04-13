@@ -69,7 +69,7 @@ header {
   align-items: center;
   justify-content: center;
   margin: 0 10px;
-  transition: 1s background-color;
+  transition: 0.2s background-color;
 }
 
 .menu li:hover {
@@ -120,6 +120,20 @@ header {
   color: var(--color);
   line-height: 58px;
   font-weight: 900;
+  animation: flash 3s ease-in;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+  0% {background-image: linear-gradient(50deg,rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.7) 60%);}
+  20% {background-image: linear-gradient(80deg,rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.7) 60%);}
+  40% {background-image: linear-gradient(110deg,rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.7) 60%);}
+  50% {background-image: linear-gradient(130deg,rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.7) 60%);}
+  60% {background-image: linear-gradient(190deg,rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.7) 60%);}
+  70% {background-image: linear-gradient(230deg,rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.7) 60%);}
+  80% {background-image: linear-gradient(300deg,rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.7) 60%);}
+  90% {background-image: linear-gradient(360deg,rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.7) 60%);}
+  100% {background-image: linear-gradient(50deg,rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.7) 60%);}
 }
 
 .main_head h1 > span {
