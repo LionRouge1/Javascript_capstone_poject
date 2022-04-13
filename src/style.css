@@ -23,9 +23,12 @@ body {
 
 nav {
   display: flex;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
   justify-content: space-between;
   height: 70px;
-  background-color: var(--bar-color);
+  background-color: #fafafa54;
 }
 
 .logo {
@@ -82,52 +85,97 @@ header {
 
 .menu > ul a {
  text-decoration: none;
- color: black;
  font-weight: 500;
  line-height: 14px;
  font-size: 20px;
- color: var(--color);
+ color: white;
 }
 
 /* style the main */
 
-main {
+.main_head {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  display: block;
+  background-image: url('assest/8984.webp');
+  background-size: cover;
+  z-index: 0;
+  background-repeat: no-repeat;
+}
+
+.main_head > h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  background-image: linear-gradient(50deg,rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.7) 60%);
+  border-radius: 50%;
+  top: 30%;
+  position: absolute;
+  left: 45%;
+  text-align: center;
+  font-size: 50px;
+  color: var(--color);
+  line-height: 58px;
+  font-weight: 900;
+}
+
+.main_head h1 > span {
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 157px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color);
+}
+
+.main_head > p {
+  width: 450px;
+  position: absolute;
+  bottom: 2%;
+  background-color: white;
+  font-size: 24px;
+  left: 3%;
+  padding: 20px;
+  text-align: center;
+}
+
+.meals_container {
   width: 70%;
   margin: 0 auto;
 }
 
-main article {
+.meals_container article {
   display: inline-block;
-  width: 350px;
-  background-color: var(--hd-color);
-  box-shadow: 0 0 16px rgb(119, 110, 110);
-  border-radius: 20px;
+  width: 400px;
   margin: 20px;
-  padding: 25px;
+  padding-bottom: 30px;
+  box-shadow: 0 0 10px var(--nd-color);
   transition: 0.3s transform;
 }
 
-main article:hover {
-  transform: scale(1.1);
-}
-
-.title {
-  margin: 15px 0;
-  display: flex;
-  justify-content: space-between;
+.meals_container article:hover {
+  transform: scale(1.02);
 }
 
 .meal_img {
-  width: 300px;
-  background-color: white;
-  height: 200px;
-  border-radius: 20px;
+  width: 100%;
+  height: 300px;
 }
 
 .meal_img > img {
-  width: 300px;
-  height: 200px;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn_comment {
@@ -137,8 +185,8 @@ main article:hover {
   font-size: 18px;
   border: none;
   border-radius: 5px;
-  height: 30px;
-  box-shadow: 5px 5px 0 #dd1a32;
+  height: 40px;
+  box-shadow: 3px 3px 0 #dd1a32;
   transition: 0.2s box-shadow;
 }
 
