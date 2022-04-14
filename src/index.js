@@ -1,4 +1,5 @@
 import './style.css';
+import './style_mobile.css';
 import Icon from './assest/logo1.png';
 import getData from './modules/homePage.js';
 import Likes from './modules/Likes.js';
@@ -37,15 +38,6 @@ const display = async () => {
 
 const ftnLikes = async () => {
  const like_icon = document.querySelectorAll('.fa-thumbs-up');
-
-
-
- const btn = document.querySelectorAll('.btn');
- btn.forEach((it) => {
-  it.addEventListener('click', (e) => console.log(e.target.id));
- });
-
-
  like_icon.forEach(element => {
   element.addEventListener('click', async (e) => {
    const nbrLike = e.target.previousSibling;
@@ -53,6 +45,7 @@ const ftnLikes = async () => {
    let i = +nbrLike.textContent;
    const sdLink = new Likes(likeIcon.id);
    const check = await sdLink.postLikes();
+
    if (check) {
     i++;
     nbrLike.innerHTML = i;
@@ -68,7 +61,7 @@ const ftnLikes = async () => {
   });
  });
 }; 
-display().then(ftnLikes);
+
 
 const dplLikes = async () => {
  const sdLink = new Likes();
@@ -77,11 +70,18 @@ const dplLikes = async () => {
    document.getElementById(item_id).previousSibling.textContent = likes;
   });
  });
-}
-dplLikes();
-
-const getb = async () => {
-
 };
-getb();
 
+display()
+.then(dplLikes)
+.then(ftnLikes);
+
+const bars =document.getElementById('bars');
+const nav = document.querySelector('nav');
+bars.addEventListener('click', () => {
+ if (nav.style.display === 'block') {
+  nav.style.display = 'none';
+ }else {
+  nav.style.display = 'block'
+ }
+})
