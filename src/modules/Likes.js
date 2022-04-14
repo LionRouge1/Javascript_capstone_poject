@@ -31,26 +31,22 @@ export default class Likes {
   };
 
   if (this.liked === '' || this.liked.lenght === 0) {
-    const response = await fetch(this.url, option);
+    const response = fetch(this.url, option);
     response.then(() => {
       this.liked = [this.data];
       this.saveLiked();
     });
-    this.liked = [this.data];
-    this.saveLiked();
     return true;
   } else {
     const likedSort = this.liked.map((item) => item.item_id);
     if (likedSort.includes(this.item_id)) {
       return false;
     }else {
-      const response = await fetch(this.url, option);
+      const response = fetch(this.url, option);
       response.then(() => {
         this.liked.push(this.data);
         this.saveLiked();
       });
-      this.liked.push(this.data);
-      this.saveLiked();
       return true;
     }
   }
