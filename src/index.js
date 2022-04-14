@@ -28,7 +28,7 @@ const display = async () => {
    </div>
    <p class="inst">${strInstructions.slice(0,100)}....</p>
    <p class="CA"><span><strong>Category:</strong> ${strCategory}</span><span><strong>Area:</strong> ${strArea}</span></p>
-   <button class="btn_comment">Comments</button>
+   <button id=${idMeal} class="btn_comment btn" >Comments</button>
    
   </article>`;
   container.insertAdjacentHTML('beforeend', article);
@@ -37,6 +37,15 @@ const display = async () => {
 
 const ftnLikes = async () => {
  const like_icon = document.querySelectorAll('.fa-thumbs-up');
+
+
+
+ const btn = document.querySelectorAll('.btn');
+ btn.forEach((it) => {
+  it.addEventListener('click', (e) => console.log(e.target.id));
+ });
+
+
  like_icon.forEach(element => {
   element.addEventListener('click', async (e) => {
    const nbrLike = e.target.previousSibling;
@@ -70,3 +79,9 @@ const dplLikes = async () => {
  });
 }
 dplLikes();
+
+const getb = async () => {
+
+};
+getb();
+
