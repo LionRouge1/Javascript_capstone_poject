@@ -3,6 +3,11 @@
 # Big Chief
 > Big Chief is a website where you find and share everyday cooking inspiration. Discover recipes, cooks, videos, and how-tos based on the food you love.
 
+![screenshot](src/assest/projectbigchef.png)
+![screenshot](src/assest/bigchief.png)
+
+## Video link
+Video link [here](https://drive.google.com/file/d/1hjawdycWo_agZzfFYI7vjqZvhnHptycg/view?usp=sharing )
 
 ## Built With
 
