@@ -1,4 +1,4 @@
-const commentSec = document.querySelector('.comment-section');
+export const commentSec = document.querySelector('.comment-section');
 const commentInput = document.querySelector('.comment-input');
 const commentArea = document.querySelector('.comment-area');
 const commentList = document.querySelector('.comment-list');
@@ -84,7 +84,7 @@ const closeModal = document.querySelector('.close-icon');
 closeModal.addEventListener('click', () => {
   commentSec.style.display = 'none';
 });
-export default handleForm;
+export default { handleForm, displaycomment };
 
 /* get comment data */
 const mealUrl = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=';
