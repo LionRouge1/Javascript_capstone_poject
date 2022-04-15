@@ -62,6 +62,8 @@ const createComment = async ({ itemId, username, comment }, url) => {
       'Content-type': 'application/json; charset=UTF-8',
     },
   });
+  commentList.innerHTML = '';
+  getComment(itemId);
 };
 
 const handleForm = (e) => {
