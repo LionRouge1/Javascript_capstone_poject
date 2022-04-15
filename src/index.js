@@ -3,14 +3,14 @@ import './style_mobile.css';
 import Icon from './assest/logo1.png';
 import getData from './modules/homePage.js';
 import Likes from './modules/Likes.js';
+import CalculeLike from './modules/CalculeLike.js';
  
 const mylogo = new Image();
 mylogo.src = Icon;
-
-const container = document.querySelector('.meals_container');
-
 const logo = document.querySelector('.logo');
 logo.appendChild(mylogo);
+
+const container = document.querySelector('.meals_container');
 
 const display = async () => {
  const meals = await getData('https://www.themealdb.com/api/json/v1/1/search.php?f=a');
@@ -25,7 +25,14 @@ const display = async () => {
   <article>
    <div class="meal_img"><img src="${strMealThumb}" alt=""></div>
    <div class="title"><h3>${strMeal}</h3>
-   <div class="like_box"><span class="nbr_like"></span><span style=" color: ${liked.includes('item_' + idMeal) ? '#ed1c24' : ''}" liked="${liked.includes('item_' + idMeal) ? 'true' : 'false'}" class="fas fa-thumbs-up" id="item_${idMeal}"></span></div>
+     <div class="like_box">
+       <span class="nbr_like"></span>
+       <span 
+       style="color: ${liked.includes('item_' + idMeal) ? '#ed1c24' : ''}" 
+       liked="${liked.includes('item_' + idMeal) ? 'true' : 'false'}" 
+       class="fas fa-thumbs-up" id="item_${idMeal}"></span>
+       <span class="pop"></span>
+     </div>
    </div>
    <p class="inst">${strInstructions.slice(0,100)}....</p>
    <p class="CA"><span><strong>Category:</strong> ${strCategory}</span><span><strong>Area:</strong> ${strArea}</span></p>
@@ -42,14 +49,10 @@ const ftnLikes = async () => {
   element.addEventListener('click', async (e) => {
    const nbrLike = e.target.previousSibling;
    const likeIcon = e.target;
-   let i = +nbrLike.textContent;
-   const sdLink = new Likes(likeIcon.id);
-   const check = await sdLink.postLikes();
+   const calLike = await CalculeLike(+nbrLike.textContent, likeIcon.id);
+   const i = calLike.toString();
 
-   if (check) {
-    i++;
-    nbrLike.innerHTML = i;
-   }
+   nbrLike.textContent = i;
 
    if (likeIcon.getAttribute('liked') === 'false') {
     likeIcon.style.color = '#ed1c24';
@@ -67,7 +70,20 @@ const dplLikes = async () => {
  const sdLink = new Likes();
  sdLink.getLikes().then((value) => {
   value.forEach(({likes, item_id}) => {
-   document.getElementById(item_id).previousSibling.textContent = likes;
+
+   const item = document.getElementById(item_id);
+   item.previousSibling.textContent = likes;
+   item.nextElementSibling.textContent = likes + ((likes > 1)? ' likes': ' like');
+
+   item.parentElement.addEventListener('mouseover', () => {
+    item.nextElementSibling.style.visibility = 'visible';
+    item.nextElementSibling.style.opacity = 1;
+   });
+
+   item.parentElement.addEventListener('mouseout', () => {
+    item.nextElementSibling.style.visibility = 'hidden';
+    item.nextElementSibling.style.opacity = 0;
+   });
   });
  });
 };
@@ -75,6 +91,8 @@ const dplLikes = async () => {
 display()
 .then(dplLikes)
 .then(ftnLikes);
+
+// Message popup on like button 
 
 const bars =document.getElementById('bars');
 const nav = document.querySelector('nav');

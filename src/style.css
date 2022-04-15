@@ -199,14 +199,49 @@ nav {
   justify-content: space-between;
 }
 
+.like_box {
+  display: inline-block;
+  position: relative;
+}
+
 .like_box > span {
   display: inline-block;
   width: 20px;
+  margin: 0 5px;
 }
 
 .like_box .fas {
   font-size: 28px;
   margin-right: 10px;
+}
+
+.like_box .pop {
+  content: "toto";
+  visibility: hidden;
+  width: 100px;
+  background-color: #555;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 80%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.like_box .pop::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 55%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 
 .inst {
