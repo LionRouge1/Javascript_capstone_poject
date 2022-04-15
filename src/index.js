@@ -55,15 +55,22 @@ form.addEventListener('submit', (e) => {
 });
 
 const ftnLikes = async () => {
-  const like_icon = document.querySelectorAll('.fa-thumbs-up');
-  like_icon.forEach((element) => {
+  const likeIcon = document.querySelectorAll('.fa-thumbs-up');
+
+  const btn = document.querySelectorAll('.btn');
+  btn.forEach((it) => {
+    it.addEventListener('click', (e) => {
+      getCommentData(e.target.id);
+    });
+  });
+
+  likeIcon.forEach((element) => {
     element.addEventListener('click', async (e) => {
       const nbrLike = e.target.previousSibling;
       const likeIcon = e.target;
       let i = +nbrLike.textContent;
       const sdLink = new Likes(likeIcon.id);
       const check = await sdLink.postLikes();
-
       if (check) {
         i += 1;
         nbrLike.innerHTML = i;
@@ -79,6 +86,7 @@ const ftnLikes = async () => {
     });
   });
 };
+display().then(ftnLikes);
 
 const dplLikes = async () => {
   const sdLink = new Likes();
@@ -88,17 +96,9 @@ const dplLikes = async () => {
     });
   });
 };
+dplLikes();
 
-display()
-  .then(dplLikes)
-  .then(ftnLikes);
+const getb = async () => {
 
-const bars = document.getElementById('bars');
-const nav = document.querySelector('nav');
-bars.addEventListener('click', () => {
-  if (nav.style.display === 'block') {
-    nav.style.display = 'none';
-  } else {
-    nav.style.display = 'block';
-  }
-});
+};
+getb();

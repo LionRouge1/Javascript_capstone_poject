@@ -21,29 +21,6 @@ body {
   background-color: white;
 }
 
-<<<<<<< HEAD
-=======
-header {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 34px;
-  align-items: center;
-  background-color: var(--hd-color);
-  height: 45px;
-  z-index: 100;
-}
-
-header > span {
-  color: var(--bar-color);
-}
-
-header > .fa-bars {
-  display: none;
-}
-
->>>>>>> df9575d46fea23a75cbd7c5e67f5c8576f5f8381
 nav {
   display: flex;
   position: absolute;
