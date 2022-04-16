@@ -82,6 +82,7 @@ const handleForm = (e) => {
 
 const closeModal = document.querySelector('.close-icon');
 closeModal.addEventListener('click', () => {
+  commentSec.innerHTML = '';
   commentSec.style.display = 'none';
 });
 export default handleForm;
