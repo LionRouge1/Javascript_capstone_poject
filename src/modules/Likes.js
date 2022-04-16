@@ -6,7 +6,7 @@ export default class Likes {
       ? JSON.parse(localStorage.getItem('liked'))
       : '';
     this.data = {
-      item_id : this.itemId,
+      item_id: this.itemId,
     };
   }
 
@@ -38,22 +38,19 @@ export default class Likes {
       });
 
       return true;
-    };
+    }
 
     const likedSort = this.liked.map((item) => item.item_id);
 
     if (likedSort.includes(this.itemId)) {
-
       return false;
-
-    } else {
-      const response = fetch(this.url, option);
-      response.then(() => {
+    }
+    const response = fetch(this.url, option);
+    response.then(() => {
       this.liked.push(this.data);
       this.saveLiked();
     });
 
     return true;
-    };
   }
 }
