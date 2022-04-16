@@ -19,23 +19,7 @@
     }]
   },
   "ignorePatterns": [
-<<<<<<< HEAD
     "dist/",
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "docs/",
-=======
-<<<<<<< HEAD
-    "dist/",
-=======
-    "docs/",
->>>>>>> home_interface
->>>>>>> dev
-=======
-    "dist/",
->>>>>>> a3c26d9d67ef4a98b33458e69eb5c3288aef009a
->>>>>>> aeadf00abdc5ae4a2d34cb275a1bce5e502f3347
     "build/"
   ]
 }
