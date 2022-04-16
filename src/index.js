@@ -4,6 +4,8 @@ import './style.css';
 import './style_mobile.css';
 import Icon from './assest/logo1.png';
 import getData from './modules/homePage.js';
+import Likes from './modules/Likes.js';
+import CalculeLike from './modules/CalculeLike.js';
 import handleForm, { getCommentData } from './modules/comment.js';
 
 const mylogo = new Image();
@@ -46,6 +48,49 @@ const display = async () => {
   });
 };
 
+const ftnLikes = async () => {
+  const like_icon = document.querySelectorAll('.fa-thumbs-up');
+  like_icon.forEach((element) => {
+    element.addEventListener('click', async (e) => {
+      const nbrLike = e.target.previousSibling;
+      const likeIcon = e.target;
+      const calLike = await CalculeLike(+nbrLike.textContent, likeIcon.id);
+      const i = calLike.toString();
+
+      nbrLike.textContent = i;
+
+      if (likeIcon.getAttribute('liked') === 'false') {
+        likeIcon.style.color = '#ed1c24';
+        likeIcon.setAttribute('liked', 'true');
+      } else if ((likeIcon.getAttribute('liked') === 'true')) {
+        likeIcon.style.color = '';
+        likeIcon.setAttribute('liked', 'false');
+      }
+    });
+  });
+};
+
+const dplLikes = async () => {
+  const sdLink = new Likes();
+  sdLink.getLikes().then((value) => {
+    value.forEach(({ likes, item_id }) => {
+      const item = document.getElementById(item_id);
+      item.previousSibling.textContent = likes;
+      item.nextElementSibling.textContent = likes + ((likes > 1) ? ' likes' : ' like');
+
+      item.parentElement.addEventListener('mouseover', () => {
+        item.nextElementSibling.style.visibility = 'visible';
+        item.nextElementSibling.style.opacity = 1;
+      });
+
+      item.parentElement.addEventListener('mouseout', () => {
+        item.nextElementSibling.style.visibility = 'hidden';
+        item.nextElementSibling.style.opacity = 0;
+      });
+    });
+  });
+};
+
 // button comments
 
 const ftnComment = () => {
@@ -58,7 +103,21 @@ const ftnComment = () => {
 };
 
 display()
+  .then(dplLikes)
+  .then(ftnLikes)
   .then(ftnComment);
+
+// Message popup on like button
+
+const bars = document.getElementById('bars');
+const nav = document.querySelector('nav');
+bars.addEventListener('click', () => {
+  if (nav.style.display === 'block') {
+    nav.style.display = 'none';
+  } else {
+    nav.style.display = 'block';
+  }
+});
 
 /* comment place */
 const form = document.querySelector('form');

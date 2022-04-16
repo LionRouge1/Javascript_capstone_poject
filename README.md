@@ -52,7 +52,7 @@ To run this project do the following tasks :
 
 
 
-## Author
+## Authors
 
 👤 **Matchoudi**
 
