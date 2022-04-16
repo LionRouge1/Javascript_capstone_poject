@@ -123,4 +123,8 @@ bars.addEventListener('click', () => {
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
   handleForm(e);
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> aeadf00abdc5ae4a2d34cb275a1bce5e502f3347

@@ -6,5 +6,25 @@
     "scss/at-rule-no-unknown": true,
     "csstree/validator": true
   },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  "ignoreFiles": ["build/**", "docs/**", "**/reset*.css", "**/bootstrap*.css", "**/*.js", "**/*.jsx"]
+=======
+>>>>>>> aeadf00abdc5ae4a2d34cb275a1bce5e502f3347
+  "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "**/*.js", "**/*.jsx"]
+>>>>>>> a3c26d9d67ef4a98b33458e69eb5c3288aef009a
+}
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
   "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "**/*.js", "**/*.jsx"]
 }
+=======
+  "ignoreFiles": ["build/**", "docs/**", "**/reset*.css", "**/bootstrap*.css", "**/*.js", "**/*.jsx"]
+}
+>>>>>>> home_interface
+>>>>>>> dev
+>>>>>>> aeadf00abdc5ae4a2d34cb275a1bce5e502f3347
