@@ -19,11 +19,7 @@
     }]
   },
   "ignorePatterns": [
-<<<<<<< HEAD
     "dist/",
-=======
-    "docs/",
->>>>>>> home_interface
     "build/"
   ]
 }
