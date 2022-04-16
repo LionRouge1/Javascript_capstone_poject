@@ -56,9 +56,8 @@ const ftnLikes = async () => {
       const likeIcon = e.target;
       const calLike = await CalculeLike(+nbrLike.textContent, likeIcon.id);
       const i = calLike.toString();
- 
+
       nbrLike.textContent = i;
-     
 
       // if (likeIcon.getAttribute('liked') === 'false') {
       //   likeIcon.style.color = '#ed1c24';
@@ -77,13 +76,13 @@ const decliment = (number, elem) => {
   if (elem.getAttribute('liked') === 'false') {
     elem.style.color = '#ed1c24';
     elem.setAttribute('liked', 'true');
-    elem.previousSibling.textContent = number ;
+    elem.previousSibling.textContent = number;
   } else if ((elem.getAttribute('liked') === 'true')) {
     elem.style.color = '';
     elem.setAttribute('liked', 'false');
     elem.previousSibling.textContent = number - 1;
   }
-}
+};
 
 const dplLikes = async () => {
   const sdLink = new Likes();
@@ -105,7 +104,7 @@ const dplLikes = async () => {
 
       item.addEventListener('click', () => {
         decliment(likes, item);
-      })
+      });
     });
   });
 };

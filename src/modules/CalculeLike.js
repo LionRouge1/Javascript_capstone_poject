@@ -8,7 +8,7 @@ const CalculeLike = async (nber, itm) => {
     nber += 1;
     return nber;
   }
-  
+
   return nber;
 };
 export default CalculeLike;
