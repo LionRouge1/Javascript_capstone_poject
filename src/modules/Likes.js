@@ -1,5 +1,5 @@
 export default class Likes {
-  constructor(itemId = '', url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/O7NaeKDfq7oZ1XEIy2sV/likes/') {
+  constructor(itemId, url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/O7NaeKDfq7oZ1XEIy2sV/likes/') {
     this.itemId = itemId;
     this.url = url;
     this.liked = localStorage.getItem('liked') != null

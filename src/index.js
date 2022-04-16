@@ -56,6 +56,7 @@ const ftnLikes = async () => {
       const likeIcon = e.target;
       const calLike = await CalculeLike(+nbrLike.textContent, likeIcon.id);
       const i = calLike.toString();
+      console.log(i);
 
       nbrLike.textContent = i;
 
