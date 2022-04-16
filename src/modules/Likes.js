@@ -36,6 +36,7 @@ export default class Likes {
         this.liked = [this.data];
         this.saveLiked();
       });
+      console.log(response);
       return true;
     }
     const likedSort = this.liked.map((item) => item.itemId);
@@ -47,6 +48,7 @@ export default class Likes {
       this.liked.push(this.data);
       this.saveLiked();
     });
+    console.log(response);
     return true;
   }
 }

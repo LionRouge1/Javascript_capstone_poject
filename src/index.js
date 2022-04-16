@@ -54,8 +54,9 @@ const ftnLikes = async () => {
     element.addEventListener('click', async (e) => {
       const nbrLike = e.target.previousSibling;
       const likeIcon = e.target;
-      const calLike = await CalculeLike(+nbrLike.textContent, likeIcon.id);
-      const i = calLike.toString();
+      const sdLink = new Likes(e.target.id);
+      const check = await sdLink.postLikes();
+      const i = CalculeLike(+nbrLike.textContent, check);
       console.log(i);
 
       nbrLike.textContent = i;
