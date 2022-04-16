@@ -56,19 +56,34 @@ const ftnLikes = async () => {
       const likeIcon = e.target;
       const calLike = await CalculeLike(+nbrLike.textContent, likeIcon.id);
       const i = calLike.toString();
-
+ 
       nbrLike.textContent = i;
+     
 
-      if (likeIcon.getAttribute('liked') === 'false') {
-        likeIcon.style.color = '#ed1c24';
-        likeIcon.setAttribute('liked', 'true');
-      } else if ((likeIcon.getAttribute('liked') === 'true')) {
-        likeIcon.style.color = '';
-        likeIcon.setAttribute('liked', 'false');
-      }
+      // if (likeIcon.getAttribute('liked') === 'false') {
+      //   likeIcon.style.color = '#ed1c24';
+      //   likeIcon.setAttribute('liked', 'true');
+      //   nbrLike.textContent = i;
+      // } else if ((likeIcon.getAttribute('liked') === 'true')) {
+      //   likeIcon.style.color = '';
+      //   likeIcon.setAttribute('liked', 'false');
+      //   nbrLike.textContent = iNbr - 1;
+      // }
     });
   });
 };
+
+const decliment = (number, elem) => {
+  if (elem.getAttribute('liked') === 'false') {
+    elem.style.color = '#ed1c24';
+    elem.setAttribute('liked', 'true');
+    elem.previousSibling.textContent = number ;
+  } else if ((elem.getAttribute('liked') === 'true')) {
+    elem.style.color = '';
+    elem.setAttribute('liked', 'false');
+    elem.previousSibling.textContent = number - 1;
+  }
+}
 
 const dplLikes = async () => {
   const sdLink = new Likes();
@@ -76,7 +91,7 @@ const dplLikes = async () => {
     value.forEach(({ likes, item_id }) => {
       const item = document.getElementById(item_id);
       item.previousSibling.textContent = likes;
-      item.nextElementSibling.textContent = likes + ((likes > 1) ? ' likes' : ' like');
+      item.nextElementSibling.textContent = item.previousSibling.textContent + ((likes > 1) ? ' likes' : ' like');
 
       item.parentElement.addEventListener('mouseover', () => {
         item.nextElementSibling.style.visibility = 'visible';
@@ -87,6 +102,10 @@ const dplLikes = async () => {
         item.nextElementSibling.style.visibility = 'hidden';
         item.nextElementSibling.style.opacity = 0;
       });
+
+      item.addEventListener('click', () => {
+        decliment(likes, item);
+      })
     });
   });
 };
