@@ -6,5 +6,10 @@
     "scss/at-rule-no-unknown": true,
     "csstree/validator": true
   },
+<<<<<<< HEAD
   "ignoreFiles": ["build/**", "dist/**", "**/reset*.css", "**/bootstrap*.css", "**/*.js", "**/*.jsx"]
 }
+=======
+  "ignoreFiles": ["build/**", "docs/**", "**/reset*.css", "**/bootstrap*.css", "**/*.js", "**/*.jsx"]
+}
+>>>>>>> home_interface

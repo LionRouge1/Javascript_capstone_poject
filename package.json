@@ -26,7 +26,11 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.26.0",
+<<<<<<< HEAD
     "hint": "^6.1.11",
+=======
+    "hint": "^6.0.5",
+>>>>>>> home_interface
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.5.1",
     "style-loader": "^3.3.1",
@@ -39,8 +43,11 @@
     "webpack-dev-server": "^4.8.1"
   },
   "dependencies": {
+<<<<<<< HEAD
     "generator-jhipster": "^7.6.0",
     "latest-version": "^6.0.0",
+=======
+>>>>>>> home_interface
     "lodash": "^4.17.21"
   },
   "main": "webpack.config.js"
