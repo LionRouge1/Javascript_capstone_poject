@@ -19,7 +19,15 @@
     }]
   },
   "ignorePatterns": [
+<<<<<<< HEAD
     "docs/",
+=======
+<<<<<<< HEAD
+    "dist/",
+=======
+    "docs/",
+>>>>>>> home_interface
+>>>>>>> dev
     "build/"
   ]
 }
